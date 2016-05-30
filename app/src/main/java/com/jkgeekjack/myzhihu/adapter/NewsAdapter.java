@@ -56,10 +56,12 @@ public class NewsAdapter extends BaseAdapter {
         TextView tvnews=holder.tvnews;
         ImageView ivnews=holder.ivnews;
         tvnews.setText(news.getTitle());
+        //记得判空，不然后会空指针异常
         if (news.getImages()==null){
             ivnews.setVisibility(View.GONE);
         }else {
             ivnews.setVisibility(View.VISIBLE);
+            //用Glide根据URL加载图片
             Glide.with(context).load(news.getImages().get(0)).into(ivnews);
         }
         return convertView;

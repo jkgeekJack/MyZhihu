@@ -37,8 +37,8 @@ import rx.schedulers.Schedulers;
  */
 public class BaseFragment extends Fragment {
 
-    private String baseUrl="http://news-at.zhihu.com";
-    public ZhiHuService service;
+    private String baseUrl="http://news-at.zhihu.com";//baseUrl一定要设为这个
+    public ZhiHuService service;//要靠他来获取消息，子Fragment都要用
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -82,6 +82,7 @@ public class BaseFragment extends Fragment {
                     @Override
                     public void onNext(final ArrayList<StoriesEntity> storiesEntities) {
                         listView.setAdapter(new NewsAdapter(storiesEntities,getContext()));
+                        //点击item跳转到详细页面
                         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                             @Override
                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
