@@ -19,6 +19,7 @@
  - retrofit:adapter-rxjava:2.0.0-beta2
  - retrofit:converter-gson:2.0.0-beta2
  - pagerslidingtabstrip:1.0.1
+ - glide:3.5.2
 
 
 ## API Reference - API 分析
